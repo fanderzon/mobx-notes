@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
-import { Text } from 'react-native';
+import { Button } from 'react-native';
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
     title: 'Notes',
   };
   render() {
-    return <Text>Add a note</Text>;
+    const { navigate } = this.props.navigation;
+    return (
+      <Button
+        onPress={() => navigate('NoteForm')}
+        title="Add a note" />
+    );
   }
 }
